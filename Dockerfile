@@ -1,4 +1,4 @@
-Dockerfile FROM centurylink/alpine-rails
+FROM centurylink/alpine-rails
 
 # Configure the main working directory. This is the base
 # directory used in any further RUN, COPY, and ENTRYPOINT
