@@ -16,13 +16,13 @@ RUN gem install bundler && bundle install --jobs 20 --retry 5 --without developm
 # Set Rails to run in production
 ENV RAILS_ENV production
 ENV RACK_ENV production
+ENV SECRET_KEY_BASE a359c47c71b805e70fc85f9b49f8262beba98cdccdc189bc52321c49c1a96fc557dc4ca423bfa56f17a19299b07ef6cb0352802ecc0b6ab7e7b4e6c74f34a3dc
 
 # Copy the main application.
 COPY . ./
 
 # Precompile Rails assets
-RUN bundle exec rake secret
-RUN bundle exec rake assets:precompile 
+RUN bundle exec rake assets:precompile
 
 # Start puma
 CMD bundle exec puma
