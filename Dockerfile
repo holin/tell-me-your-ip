@@ -21,7 +21,8 @@ ENV RACK_ENV production
 COPY . ./
 
 # Precompile Rails assets
-RUN bundle exec rake assets:precompile
+RUN bundle exec rake secret
+RUN bundle exec rake assets:precompile 
 
 # Start puma
 CMD bundle exec puma
